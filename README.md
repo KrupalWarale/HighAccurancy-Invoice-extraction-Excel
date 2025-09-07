@@ -9,14 +9,14 @@
 
 <table align="center" width="100%">
   <tr>
+    <td width="30%" style="text-align: center;">
+      <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="First" style="width: 100%; height: 600px; object-fit: contain;"/>
+    </td>
     <td width="40%" style="text-align: center;">
-      <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="First" style="width: 100%; height: 500px; object-fit: contain;"/>
+      <img src="https://github.com/user-attachments/assets/f3666700-6898-450d-85c9-fc4e101c71b8" alt="Second" style="width: 150%; height: 600px; object-fit: contain;"/>
     </td>
     <td width="30%" style="text-align: center;">
-      <img src="https://github.com/user-attachments/assets/f3666700-6898-450d-85c9-fc4e101c71b8" alt="Second" style="width: 150%; height: 500px; object-fit: contain;"/>
-    </td>
-    <td width="30%" style="text-align: center;">
-      <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" alt="Third" style="width: 150%; height: 500px; object-fit: contain;"/>
+      <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" alt="Third" style="width: 150%; height: 600px; object-fit: contain;"/>
     </td>
   </tr>
 </table>
