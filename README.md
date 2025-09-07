@@ -10,80 +10,116 @@
 
 [![GitHub language](https://img.shields.io/github/languages/top/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel)
 
-**Python script for accurate PDF invoice extraction to CSV/Excel.**
+
+**A Python script for high-accuracy invoice extraction from PDF files and conversion to CSV format.**
 
 </div>
 
 ## 📖 Overview
-Extracts metadata & tables from PDF invoices, maps headers using JSON config, and outputs structured CSV & JSON. Handles varied formats with fuzzy matching and automatic error handling.
+
+Automates extraction of key info from PDF invoices (metadata and tables) into structured CSV for Excel. Handles invoice variations and improves accuracy using Python libraries for PDF processing and data manipulation.
 
 ## ✨ Features
-- Auto PDF invoice processing  
-- High accuracy via synonym & fuzzy matching  
-- CSV output for Excel  
-- Configurable field mapping (`colomnHeader.json`)  
-- Metadata JSON export  
-- Table merging & deduplication  
-- Error handling with success/failed folders  
+
+- Automated PDF invoice processing
+- High accuracy with intelligent field mapping
+- CSV output for Excel
+- Customizable field mapping via `colomnHeader.json`
+- Metadata and table extraction
+- Error handling with success/failed folders
+- JSON metadata output
 
 ## 🧠 Logic Overview
-1. **PDF Conversion:** Convert PDFs with `docling`, extract text & tables.  
-2. **Metadata Extraction:** Find key-value pairs, clean headers, apply fuzzy matching.  
-3. **Table Processing:** Normalize headers, clean rows/columns.  
-4. **Merging:** Combine tables, remove duplicates, track invoices with hashes.  
-5. **Output:** Save CSV + JSON, manage processed files.  
 
-### Benefits
-Accurate, flexible, scalable, and traceable invoice handling.
+### 📄 Step 1: PDF Document Conversion
+- Uses `docling` to convert PDFs to structured documents.
+- Extracts text content and table structures.
+
+### 🔍 Step 2: Metadata Extraction
+- **Text Parsing:** Scans invoice text for key-value pairs.
+- **Header Processing:** Extracts relational data, clears redundant text, cleans column headers.
+- **Fuzzy Matching:** Applies synonym matching for field variations.
+
+### 📊 Step 3: Tabular Data Processing
+- **Table Extraction:** Identifies and extracts tables from PDFs.
+- **Header Normalization:** Maps headers to standardized names using `colomnHeader.json`.
+- **Data Cleaning:** Filters irrelevant rows, removes empty columns, ensures consistency.
+
+### 🔗 Step 4: Data Merging & Consolidation
+- **Intelligent Merging:** Combines tables based on unique identifiers.
+- **Deduplication:** Removes duplicates and merges overlapping data.
+- **Invoice Tracking:** Generates unique hashes and sequential numbers.
+
+### 💾 Step 5: Output Generation
+- **CSV Export:** Saves consolidated data to `output.csv`.
+- **JSON Metadata:** Stores key-value pairs as JSON files.
+- **File Management:** Moves processed PDFs to success/failed folders.
+
+### 🎯 Key Benefits
+- **Accuracy:** Fuzzy matching reduces manual errors.
+- **Flexibility:** Configurable field mapping for different formats.
+- **Scalability:** Batch processing with automatic tracking.
+- **Traceability:** Unique hashes and organized folders.
 
 ## 🛠️ Tech Stack
-- Python, pandas, docling  
-- hashlib (hashing), difflib (fuzzy matching)
+
+- **Python:** Core language.
+- **pandas:** Data manipulation.
+- **docling:** PDF processing.
+- **hashlib:** Hash generation.
+- **difflib:** Fuzzy matching.
 
 ## 🚀 Quick Start
-**Prerequisites:** Python 3.9+, install deps:  
-```bash
-pip install pandas docling
-```
 
-**Run:**
-```bash
-git clone https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel.git
-cd HighAccurancy-Invoice-extraction-Excel
-python main.py
-```
+### Prerequisites
 
-- Place PDFs in `input/`  
-- Configure `colomnHeader.json` if needed  
-- Outputs → `output/output.csv` + `output/json/`  
-- Processed files → `processed/success` / `processed/failed`
+- Python 3.x (tested on 3.9+).
+- Install libraries: `pip install pandas docling`
+
+### Installation
+
+1. Clone repo: `git clone https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel.git`
+2. Place PDFs in `input/`.
+3. Configure `colomnHeader.json` as needed.
+4. Run: `python main.py`
+5. Outputs in `output/output.csv` and `output/json/`. Processed PDFs moved to `processed/success` or `processed/failed`.
 
 ## 📁 Project Structure
+
 ```
 HighAccurancy-Invoice-extraction-Excel/
-├── main.py
-├── colomnHeader.json
-├── input/
-├── output/
+├── README.md
+├── colomnHeader.json          # Field mapping config
+├── main.py                    # Main script
+├── input/                     # Input PDFs
+├── output/                    # Output CSV & JSON
 │   ├── output.csv
-│   └── json/
-├── processed/{success,failed}
+│   └── json/                  # Metadata JSONs
+├── processed/                 # Processed files
+│   ├── success/               # Successful PDFs
+│   └── failed/                # Failed PDFs
 ```
 
 ## ⚙️ Configuration
-`colomnHeader.json` maps synonyms (item codes, HSN/SAC, description, qty, taxes, fees, etc.) → standardized names. Fuzzy matching ensures flexibility across invoice formats. Add/edit synonyms for better accuracy.
+
+`colomnHeader.json` maps invoice field synonyms to standardized names for accurate extraction. Contains table_unique_identifiers, line_item_table_headers, and charges_fees_table_headers. Adjust for your invoice formats.
 
 ## 🤝 Contributing
-Open issues or PRs welcome.
+
+Contributions welcome! Open issues or PRs.
 
 ## 📄 License
+
 MIT License.
 
 ## 📸 Sample Outputs
-**CSV Output**  
+
+### Extracted CSV Output
+
 <img width="1517" height="590" alt="outputCsv" src="https://github.com/user-attachments/assets/a54ed951-988b-4f4d-8bd3-4af0a309c5b8" />
 
-**JSON Metadata Output**  
+### Extracted Metadata JSON Output
+
 <img width="1167" height="644" alt="jsonOutput" src="https://github.com/user-attachments/assets/e20527f7-f1b2-480b-8f71-3403118bbb8f" />
 
 ---
