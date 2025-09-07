@@ -64,15 +64,16 @@ This script extracts key invoice data and writes it into a structured Excel shee
 
 
 ## 📁 Project Structure
-
 ```
-HighAccurancy-Invoice-extraction-Excel/
-├── README.md
-├── colomnHeader.json
-├── input/
-├── main.py
+├── input/                  # Input directory for PDF invoices
+├── processed/
+│   ├── success/            # Successfully processed PDFs
+│   ├── failed/             # PDFs that failed processing
 ├── output/
-└── processed/
+│   ├── json/               # Extracted metadata in JSON format
+│   ├── output.csv          # Consolidated table data
+├── columnHeader.json       # Configuration file for header mappings
+└── main.py                 # Main processing script
 ```
 
 ## ⚙️ Configuration
