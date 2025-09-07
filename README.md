@@ -17,7 +17,10 @@ This script extracts key invoice data and writes it into a structured Excel shee
 
 ## prototype
 
-<img width="820" height="956" alt="{F36CC44F-97B6-480D-9712-0142AA9604FC}" src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="Invoice Example" width="400"/>
+</p>
+
 
 ## ✨ Features
 
