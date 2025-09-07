@@ -7,19 +7,21 @@
 [![GitHub issues](https://img.shields.io/github/issues/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel/issues)
 [![GitHub language](https://img.shields.io/github/languages/top/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel)
 
-<table align="center" width="100%">
-  <tr>
-    <td width="30%">
-      <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="First" style="width:100%; height:auto; object-fit:contain;"/>
-    </td>
-    <td width="30%">
-      <img src="https://github.com/user-attachments/assets/f3666700-6898-450d-85c9-fc4e101c71b8" alt="Second" style="width:100%; height:auto; object-fit:contain;"/>
-    </td>
-    <td width="30%">
-      <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" alt="Third" style="width:100%; height:auto; object-fit:contain;"/>
-    </td>
-  </tr>
-</table>
+<div style="display:flex; justify-content:center; gap:10px; width:100%; align-items:flex-start;">
+  <div style="flex: 4 1 0%;">
+    <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" 
+         alt="First" style="width:100%; height:auto; object-fit:contain;"/>
+  </div>
+  <div style="flex: 3 1 0%;">
+    <img src="https://github.com/user-attachments/assets/f3666700-6898-450d-85c9-fc4e101c71b8" 
+         alt="Second" style="width:100%; height:auto; object-fit:contain;"/>
+  </div>
+  <div style="flex: 3 1 0%;">
+    <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" 
+         alt="Third" style="width:100%; height:auto; object-fit:contain;"/>
+  </div>
+</div>
+
 
 
 **A Python script for extracting data from invoices and outputting it to an Excel file.**
