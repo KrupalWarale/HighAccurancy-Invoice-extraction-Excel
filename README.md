@@ -7,7 +7,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel/issues)
 [![GitHub language](https://img.shields.io/github/languages/top/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel)
 
-<img width="1861" height="594" alt="{2F4CE71C-9D6E-44B4-8D6C-97BF4407AC98}" src="https://github.com/user-attachments/assets/539aeef9-b511-4ec7-b7e9-c5f266bab110" />
+<img width="1883" height="677" alt="{A1A2B484-B2B2-4983-93F7-6348154856F9}" src="https://github.com/user-attachments/assets/27257042-e958-4727-870a-4e61e5eea5a2" />
+
 
 
 
