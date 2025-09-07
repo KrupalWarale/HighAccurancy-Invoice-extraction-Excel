@@ -9,7 +9,7 @@
 
 <table align="center" width="100%">
   <tr>
-    <td width="40%">
+    <td width="30%">
       <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="First" style="width:100%; height:auto; object-fit:contain;"/>
     </td>
     <td width="30%">
