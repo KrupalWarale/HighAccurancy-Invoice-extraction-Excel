@@ -9,17 +9,18 @@
 
 <table align="center">
   <tr>
-    <td>
-      <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="Invoice Example" height="600"/>
+    <td width="50%">
+      <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="Invoice Example" height="500" style="width:100%; object-fit:contain;"/>
     </td>
-    <td>
-      <img src="https://github.com/user-attachments/assets/f3666700-6898-450d-85c9-fc4e101c71b8" alt="Invoice Example" height="600"/>
+    <td width="25%">
+      <img src="https://github.com/user-attachments/assets/f3666700-6898-450d-85c9-fc4e101c71b8" alt="Invoice Example" height="500" style="width:100%; object-fit:contain;"/>
     </td>
-    <td>
-      <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" alt="Invoice Example" height="600"/>
+    <td width="25%">
+      <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" alt="Invoice Example" height="500" style="width:100%; object-fit:contain;"/>
     </td>
   </tr>
 </table>
+
 
 **A Python script for extracting data from invoices and outputting it to an Excel file.**
 
