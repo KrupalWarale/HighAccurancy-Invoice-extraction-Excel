@@ -15,7 +15,7 @@
 
 This script extracts key invoice data and writes it into a structured Excel sheet. It targets high accuracy, possibly using docling library, with a custom json `colomnHeader.json` defining the output schema and headers.
 
-## prototype
+## prototype Architecture
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="Invoice Example" width="400"/>
@@ -30,6 +30,12 @@ This script extracts key invoice data and writes it into a structured Excel shee
 - **Customizable Output:** (Likely) allows customization of output fields through configuration (needs confirmation via code review).
 - **High Accuracy:** Aims for a high degree of accuracy in data extraction.
 
+## Logical Overview
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f3666700-6898-450d-85c9-fc4e101c71b8" alt="Invoice Example" width="400"/>
+</p>
+
 
 ## 🛠️ Tech Stack
 - **Python** – Core language  
@@ -40,41 +46,22 @@ This script extracts key invoice data and writes it into a structured Excel shee
 - **JSON** – Configurable field mapping (`colomnHeader.json`)  
 
 
-### Installation
+### Usage & Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel.git
-   cd HighAccurancy-Invoice-extraction-Excel
-   ```
-
-2. **Install dependencies:** 
+1. **Install dependencies:** 
    ```bash
    pip install docling pandas
    ```
 
-3. **Prepare Input:** Place your invoices pdf) in the `input` directory.  The format of the input data needs to be determined from the code.
+2. **Prepare Input:** Place your invoices pdfs (multiple also allowed) in the `input` directory.  The format of the input data needs to be determined from the code.
 
-4. **Run the script:**
+3. **Run the script:**
    ```bash
    python main.py
    ```
 
-5. **Check Output:** The processed data will be in the `output` directory in Excel format.
+4. **Check Output:** The processed data will be in the `output` directory in CSV format.
 
-
-## 📁 Project Structure
-```
-├── input/                  # Input directory for PDF invoices
-├── processed/
-│   ├── success/            # Successfully processed PDFs
-│   ├── failed/             # PDFs that failed processing
-├── output/
-│   ├── json/               # Extracted metadata in JSON format
-│   ├── output.csv          # Consolidated table data
-├── columnHeader.json       # Configuration file for header mappings
-└── main.py                 # Main processing script
-```
 
 ## ⚙️ Configuration
 
