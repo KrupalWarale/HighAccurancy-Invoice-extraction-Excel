@@ -17,11 +17,12 @@ This script extracts key invoice data and writes it into a structured Excel shee
 
 ## prototype Architecture
 
-<p align="center" style="display: flex; justify-content: center; gap: 10px; align-items: flex-start;">
-  <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="Invoice Example" height="500"/>
-  <img src="https://github.com/user-attachments/assets/f3666700-6898-450d-85c9-fc4e101c71b8" alt="Invoice Example" height="500"/>
-  <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" height="500"  alt="invoice" />
+<p align="center" style="display: flex; justify-content: center; gap: 10px; align-items: flex-start; flex-wrap: nowrap; overflow-x: auto;">
+  <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="Invoice Example" style="height:500px; max-width:100%;"/>
+  <img src="https://github.com/user-attachments/assets/f3666700-6898-450d-85c9-fc4e101c71b8" alt="Invoice Example" style="height:500px; max-width:100%;"/>
+  <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" alt="Invoice Example" style="height:500px; max-width:100%;"/>
 </p>
+
 
 
 
