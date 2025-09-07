@@ -13,31 +13,24 @@
 
 ## 📖 Overview
 
-This Python script processes invoice data, likely from image files (inferring from file structure and naming conventions), and accurately extracts key information. This information is then organized and written into a structured Excel spreadsheet.  The script aims for high accuracy in data extraction, possibly using OCR or other advanced techniques (this needs further investigation of the `main.py` code). The `colomnHeader.json` file likely contains the schema for the output Excel file, defining the column headers and their data types.
-
+This script extracts key invoice data and writes it into a structured Excel sheet. It targets high accuracy, possibly using docling library, with a custom json `colomnHeader.json` defining the output schema and headers.
 
 ## ✨ Features
 
 - **Invoice Data Extraction:** Processes invoice images or other data formats to extract relevant information.
 - **Data Cleaning and Transformation:** Cleans and transforms extracted data to ensure accuracy and consistency.
-- **Excel Output:** Generates a well-formatted Excel file (.xlsx) containing the extracted data.
+- **Excel Output:** Generates a well-formatted CSV file (.csv) containing the extracted data.
 - **Customizable Output:** (Likely) allows customization of output fields through configuration (needs confirmation via code review).
 - **High Accuracy:** Aims for a high degree of accuracy in data extraction.
 
 
 ## 🛠️ Tech Stack
-
-- **Language:** Python
-- **Libraries:**  (Requires analysis of `main.py` to identify specific libraries used for image processing, OCR, Excel manipulation, etc.)
-
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Python 3.x (version needs to be specified based on `main.py` requirements)
-- Libraries:  (List the specific Python libraries used, determined by reviewing `main.py`)  Use `pip freeze > requirements.txt` if a requirements file is not present.  Add the command to install these libraries below.
-- `colomnHeader.json` file correctly configured.
+- **Python** – Core language  
+- **pandas** – Data cleaning & tabular processing  
+- **docling** – PDF parsing & table extraction  
+- **hashlib** – Unique invoice hashing  
+- **difflib** – Fuzzy string matching  
+- **JSON** – Configurable field mapping (`colomnHeader.json`)  
 
 
 ### Installation
@@ -48,12 +41,12 @@ This Python script processes invoice data, likely from image files (inferring fr
    cd HighAccurancy-Invoice-extraction-Excel
    ```
 
-2. **Install dependencies:** (Requires analysis of `main.py` for dependency requirements.  Replace with actual libraries and version numbers.)
+2. **Install dependencies:** 
    ```bash
-   pip install -r requirements.txt  # Create requirements.txt if needed.
+   pip install docling pandas
    ```
 
-3. **Prepare Input:** Place your invoice data (images or other supported formats) in the `input` directory.  The format of the input data needs to be determined from the code.
+3. **Prepare Input:** Place your invoices pdf) in the `input` directory.  The format of the input data needs to be determined from the code.
 
 4. **Run the script:**
    ```bash
@@ -79,13 +72,6 @@ HighAccurancy-Invoice-extraction-Excel/
 
 The `colomnHeader.json` file defines the structure of the output Excel file.  Its contents and format should be documented.  (Analyze `colomnHeader.json` and describe its structure and the role of each key.)
 
-## 🤝 Contributing
-
-Contributions are welcome!  Please open an issue to discuss any changes or improvements.
-
-## 📄 License
-
-(License information to be added if available. Check the repository for a LICENSE file.)
 
 
 ---
