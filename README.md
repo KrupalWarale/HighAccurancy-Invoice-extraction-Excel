@@ -69,10 +69,10 @@ The `colomnHeader.json` file defines the structure of the output Excel file.  It
 ## Demo<table align="center" width="100%">
   <tr>
     <td width="50%" style="text-align: center;">
-      <img src="https://github.com/user-attachments/assets/638b8ebc-13ac-4449-a217-14634ee7aa82" alt="outputCsv" style="width: 100%; height: 500px; object-fit: contain;"/>
+      <img src="https://github.com/user-attachments/assets/638b8ebc-13ac-4449-a217-14634ee7aa82" alt="outputCsv" style="width: 100%; height: 400px; object-fit: contain;"/>
     </td>
     <td width="50%" style="text-align: center;">
-      <img src="https://github.com/user-attachments/assets/c3d491bc-dc81-4b2e-801c-bc2c8af856b3" alt="jsonOutput" style="width: 100%; height: 500px; object-fit: contain;"/>
+      <img src="https://github.com/user-attachments/assets/c3d491bc-dc81-4b2e-801c-bc2c8af856b3" alt="jsonOutput" style="width: 100%; height: 400px; object-fit: contain;"/>
     </td>
   </tr>
 </table>
