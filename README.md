@@ -1,73 +1,119 @@
-# HighAccuracy Invoice Extraction to Excel
+# ⚡ High Accuracy Invoice Extraction to Excel
 
-A robust tool for extracting data from PDF invoices and converting it into structured Excel-compatible CSV files with high accuracy.
+<div align="center">
 
-## Overview
+[![GitHub stars](https://img.shields.io/github/stars/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel/stargazers)
 
-This project automates the process of extracting key information from PDF invoices, including tabular data and metadata. It uses intelligent header normalization to map invoice fields to standardized formats, handles multiple tables, and organizes processed files efficiently.
+[![GitHub forks](https://img.shields.io/github/forks/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel/network)
 
-## Key Features
+[![GitHub issues](https://img.shields.io/github/issues/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel/issues)
 
-- **Accurate Data Extraction**: Extracts both structured tables and unstructured metadata from PDF invoices
-- **Header Normalization**: Maps invoice headers to standard formats using a configurable synonym dictionary
-- **Multi-Table Handling**: Merges data from multiple tables within a single invoice
-- **Error Handling**: Automatically categorizes successful and failed processing attempts
-- **Output Formats**: Generates CSV files for tabular data and JSON files for metadata
+[![GitHub language](https://img.shields.io/github/languages/top/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel)
 
-## Installation
 
-1. Ensure you have Python 3.8 or higher installed.
-2. Install the required dependencies:
-   ```
-   pip install pandas docling
-   ```
+**A Python script for high-accuracy invoice extraction from PDF files and conversion to CSV format.**
 
-## Usage
+</div>
 
-1. Place your PDF invoices in the `input/` directory.
-2. Configure the header mappings in `colomnHeader.json` if needed.
-3. Run the main script:
-   ```
-   python main.py
-   ```
-4. Processed data will be available in `output/output.csv` and `output/json/`.
-5. Check the `processed/success/` and `processed/failed/` directories for file status.
+## 📖 Overview
 
-## Configuration
+This Python script automates the extraction of key information from PDF invoices, including metadata and tabular data, and organizes it into a structured CSV file compatible with Excel. It's designed to handle variations in invoice layouts and improve data accuracy compared to manual entry. The script leverages Python libraries for PDF processing, data manipulation, and intelligent field mapping. This is particularly useful for businesses needing efficient and reliable invoice processing and accounting.
 
-Edit `colomnHeader.json` to customize header mappings:
+## ✨ Features
 
-```json
-{
-  "unique_identifiers": ["hsn_sac_identifier"],
-  "invoice_details": {
-    "Invoice Number": ["invoice_no", "inv_no", "bill_no"],
-    "Date": ["date", "invoice_date", "bill_date"]
-  }
-}
+- **Automated PDF Invoice Processing:** Extracts key metadata and tabular data from PDF invoice files.
+- **High Accuracy:** Uses intelligent field mapping and synonym matching to minimize errors inherent in manual data entry.
+- **CSV Output:** Generates a neatly organized CSV file (.csv) that can be easily opened and analyzed in Excel.
+- **Customizable Field Mapping:** Easily adaptable to different invoice formats through the `colomnHeader.json` configuration file.
+- **Metadata Extraction:** Extracts relational key-value pairs from invoice text and headers.
+- **Table Merging:** Intelligently merges multiple tables from invoices based on unique identifiers.
+- **Error Handling:** Moves successfully processed files to a success folder and failed ones to a failed folder for easy tracking.
+- **JSON Metadata Output:** Saves extracted metadata as JSON files for additional processing or reference.
+
+## 🛠️ Tech Stack
+
+- **Python:** Core programming language.
+- **pandas:** Data manipulation and analysis library for handling tabular data.
+- **docling:** Document processing library for extracting data from PDF files.
+- **hashlib:** For generating unique hashes for invoice tracking.
+- **difflib:** For fuzzy string matching to handle variations in field names.
+
+## 🚀 Quick Start
+
+<div style="display: flex; justify-content: center; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/a54ed951-988b-4f4d-8bd3-4af0a309c5b8" alt="outputCsv" width="48%">
+  <img src="https://github.com/user-attachments/assets/e20527f7-f1b2-480b-8f71-3403118bbb8f" alt="jsonOutput" width="48%">
+</div>
+
+
+### Prerequisites
+
+- Python 3.x (tested on 3.9+). You may need to install it if you don't already have it. Instructions can be found at [https://www.python.org/downloads/](https://www.python.org/downloads/)
+- Install required libraries:
+```bash
+pip install pandas docling
 ```
 
-## Project Structure
+### Installation
 
-- `input/`: Directory for PDF invoices to be processed
-- `processed/success/`: Successfully processed PDFs
-- `processed/failed/`: PDFs that failed processing
-- `output/output.csv`: Extracted tabular data
-- `output/json/`: Metadata in JSON format
-- `colomnHeader.json`: Configuration for header mappings
-- `main.py`: Main processing script
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel.git
+   cd HighAccurancy-Invoice-extraction-Excel
+   ```
 
-## Technologies
+2. **Place your PDF invoice files:** in the `input` directory.
 
-- Python
-- Pandas for data manipulation
-- Docling for PDF processing
-- Difflib for fuzzy string matching
+3. **Configure field mapping:** Edit `colomnHeader.json` to match your invoice formats (see Configuration section below).
 
-## Contributing
+4. **Run the script:**
+   ```bash
+   python main.py
+   ```
 
-Feel free to submit issues or pull requests for improvements.
+5. **Output:** The processed data will be saved in the `output` directory as a CSV file named `output.csv`. Extracted metadata will be saved as JSON files in `output/json`. Successfully processed PDFs will be moved to `processed/success`, and failed ones to `processed/failed`.
+   
 
-## License
+## 📁 Project Structure
 
-This project is licensed under the MIT License.
+```
+HighAccurancy-Invoice-extraction-Excel/
+├── README.md
+├── colomnHeader.json          # Configuration for field mapping and synonyms
+├── main.py                    # Main script for invoice processing
+├── input/                     # Directory for input PDF invoice files
+├── output/                    # Directory for output CSV file and JSON metadata
+│   ├── output.csv
+│   └── json/                  # Extracted metadata as JSON files
+├── processed/                 # Directory for processed files
+│   ├── success/               # Successfully processed PDFs
+│   └── failed/                # Failed to process PDFs
+```
+
+## ⚙️ Configuration
+
+The `colomnHeader.json` file is crucial for configuring the script to extract and map the desired data fields from invoices. This file contains:
+
+- **table_unique_identifiers:** Lists of synonyms for unique identifiers like item codes, HSN/SAC codes, etc.
+- **line_item_table_headers:** Mapping of various line item fields (description, quantity, price, taxes, etc.) with their possible synonyms.
+- **charges_fees_table_headers:** Mapping for additional charges and fees fields.
+
+The structure is a JSON object where keys are standardized field names and values are arrays of possible synonyms that might appear in invoices. The script uses fuzzy matching to map invoice fields to these standardized names, allowing it to handle variations in invoice formats.
+
+Adjust this file as needed to reflect your specific invoice structures and add new synonyms for better matching accuracy.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+<div align="center">
+
+**Made with ❤️ by KrupalWarale**
+
+</div>
