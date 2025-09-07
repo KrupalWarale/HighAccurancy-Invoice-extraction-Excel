@@ -7,16 +7,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel/issues)
 [![GitHub language](https://img.shields.io/github/languages/top/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel)
 
-<table>
-  <tr>
-    <td>
-      <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="First" height="700" width="500"/>
-    </td>
-    <td>
-      <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" alt="Third" height="700" width="500"/>
-    </td>
-  </tr>
-</table>
+<img width="1861" height="594" alt="{2F4CE71C-9D6E-44B4-8D6C-97BF4407AC98}" src="https://github.com/user-attachments/assets/539aeef9-b511-4ec7-b7e9-c5f266bab110" />
+
 
 
 
@@ -38,8 +30,6 @@ This script extracts key invoice data and writes it into a structured Excel shee
 - **High Accuracy:** Aims for a high degree of accuracy in data extraction.
 
 ## Logical Overview
-  <img src="https://github.com/user-attachments/assets/f3666700-6898-450d-85c9-fc4e101c71b8" alt="Second" style="width: 60%; height: 300px; object-fit: contain;"/>
-
 
 
 ## 🛠️ Tech Stack
