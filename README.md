@@ -30,6 +30,40 @@ This Python script automates the extraction of key information from PDF invoices
 - **Error Handling:** Moves successfully processed files to a success folder and failed ones to a failed folder for easy tracking.
 - **JSON Metadata Output:** Saves extracted metadata as JSON files for additional processing or reference.
 
+## 🧠 Logic Overview
+
+The script follows a comprehensive workflow to process PDF invoices efficiently:
+
+### 📄 Step 1: PDF Document Conversion
+- Uses the `docling` library to convert PDF files into structured document models.
+- Extracts both text content and table structures from the invoices.
+
+### 🔍 Step 2: Metadata Extraction
+- **Text Parsing:** Scans the entire invoice text for key-value pairs (e.g., "Invoice No: 12345").
+- **Header Processing:** Extracts relational data from column headers, clears redundant text, and cleans column header fields to improve accuracy.
+- **Fuzzy Matching:** Applies intelligent synonym matching to handle variations in field names.
+
+### 📊 Step 3: Tabular Data Processing
+- **Table Extraction:** Identifies and extracts tables from the PDF using document structure analysis.
+- **Header Normalization:** Maps table column headers to standardized names using the `colomnHeader.json` configuration.
+- **Data Cleaning:** Filters out irrelevant rows (e.g., totals), removes empty or numeric-only columns, and ensures data consistency.
+
+### 🔗 Step 4: Data Merging & Consolidation
+- **Intelligent Merging:** Combines multiple tables based on unique identifiers (e.g., item codes, HSN/SAC).
+- **Deduplication:** Removes duplicate entries and merges overlapping data.
+- **Invoice Tracking:** Generates unique hashes and sequential invoice numbers for tracking.
+
+### 💾 Step 5: Output Generation
+- **CSV Export:** Saves the consolidated tabular data to `output.csv` for Excel compatibility.
+- **JSON Metadata:** Stores extracted key-value pairs as JSON files in `output/json` for reference.
+- **File Management:** Moves processed PDFs to `processed/success` or `processed/failed` folders.
+
+### 🎯 Key Benefits
+- **Accuracy:** Fuzzy matching and synonym handling reduce manual errors.
+- **Flexibility:** Configurable field mapping adapts to different invoice formats.
+- **Scalability:** Processes multiple invoices in batch with automatic tracking.
+- **Traceability:** Unique hashes and organized folder structure for easy auditing.
+
 ## 🛠️ Tech Stack
 
 - **Python:** Core programming language.
@@ -39,13 +73,6 @@ This Python script automates the extraction of key information from PDF invoices
 - **difflib:** For fuzzy string matching to handle variations in field names.
 
 ## 🚀 Quick Start
-
-<div style="display: flex; justify-content: center; gap: 10px;">
-  <img src="https://github.com/user-attachments/assets/a54ed951-988b-4f4d-8bd3-4af0a309c5b8" alt="outputCsv" width="48%">
-</div>
-
-
-
 
 ### Prerequisites
 
@@ -73,7 +100,6 @@ pip install pandas docling
    ```
 
 5. **Output:** The processed data will be saved in the `output` directory as a CSV file named `output.csv`. Extracted metadata will be saved as JSON files in `output/json`. Successfully processed PDFs will be moved to `processed/success`, and failed ones to `processed/failed`.
-   
 
 ## 📁 Project Structure
 
@@ -110,6 +136,16 @@ Contributions are welcome! Please open an issue or submit a pull request.
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 📸 Sample Outputs
+
+### Extracted CSV Output
+
+<img width="1517" height="590" alt="outputCsv" src="https://github.com/user-attachments/assets/a54ed951-988b-4f4d-8bd3-4af0a309c5b8" />
+
+### Extracted Metadata JSON Output
+
+<img width="1167" height="644" alt="jsonOutput" src="https://github.com/user-attachments/assets/e20527f7-f1b2-480b-8f71-3403118bbb8f" />
 
 ---
 
