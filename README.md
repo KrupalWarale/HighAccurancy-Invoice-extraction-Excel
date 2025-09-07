@@ -15,6 +15,10 @@
 
 This script extracts key invoice data and writes it into a structured Excel sheet. It targets high accuracy, possibly using docling library, with a custom json `colomnHeader.json` defining the output schema and headers.
 
+## prototype
+
+<img width="820" height="956" alt="{F36CC44F-97B6-480D-9712-0142AA9604FC}" src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" />
+
 ## ✨ Features
 
 - **Invoice Data Extraction:** Processes invoice images or other data formats to extract relevant information.
