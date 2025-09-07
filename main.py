@@ -1,4 +1,7 @@
-import os, json, pandas as pd, hashlib
+import os
+import json
+import pandas as pd
+import hashlib
 from difflib import get_close_matches
 from docling.document_converter import DocumentConverter
 
@@ -6,7 +9,8 @@ from docling.document_converter import DocumentConverter
 input_dir, success_dir, failed_dir = "input", "processed/success", "processed/failed"
 os.makedirs(success_dir, exist_ok=True)
 os.makedirs(failed_dir, exist_ok=True)
-csv_file, json_path = "processed/output.csv", "colomnHeader.json"
+os.makedirs("output/json", exist_ok=True)
+csv_file, json_path = "output/output.csv", "colomnHeader.json"
 
 if not os.path.exists(json_path):
     raise FileNotFoundError(f"Missing file: {json_path}")
@@ -26,15 +30,24 @@ def normalize_headers(df, cutoff=0.6):
         for col in df.columns if col.lower() in header_map or get_close_matches(col.lower(), all_synonyms, n=1, cutoff=cutoff)}
     return df.rename(columns=rename_map)
 
-# Clear column_header fields
-def edit_column_headers(obj, count=0):
+# Clear column_header fields and collect relational pairs
+def edit_column_headers(obj, metadata=None, count=0):
+    if metadata is None:
+        metadata = {}
     if isinstance(obj, dict):
         if obj.get("column_header") and "text" in obj and ":" in obj["text"]:
+            parts = obj["text"].split(":", 1)
+            key = parts[0].strip().replace("#", "")  # Remove # from key
+            value = parts[1].strip() if len(parts) > 1 else ""
+            if key and key not in metadata:  # Avoid duplicates and empty keys
+                metadata[key] = value
             obj["text"], count = "", count + 1
-        for v in obj.values(): count = edit_column_headers(v, count)
-    elif isinstance(obj, list): 
-        for item in obj: count = edit_column_headers(item, count)
-    return count
+        for v in obj.values():
+            count, metadata = edit_column_headers(v, metadata, count)
+    elif isinstance(obj, list):
+        for item in obj:
+            count, metadata = edit_column_headers(item, metadata, count)
+    return count, metadata
 
 # Merge DataFrames
 def merge_dataframes(dfs, unique_identifiers):
@@ -53,15 +66,6 @@ def merge_dataframes(dfs, unique_identifiers):
     for df in clean_dfs[1:]: merged = merged.combine_first(df.set_index(uid))
     return merged.reset_index()
 
-# Convert DataFrame to text
-def dataframe_to_text(df):
-    if df.empty: return ""
-    widths = [max(len(str(c)), *(len(str(v)) for v in df[c])) for c in df.columns]
-    header = "  ".join(f"{c:<{w}}" for c, w in zip(df.columns, widths))
-    separator = "  ".join("-"*w for w in widths)
-    rows = ["  ".join(f"{str(v):<{w}}" for v, w in zip(row, widths)) for row in df.values]
-    return "\n".join([header, separator] + rows)
-
 # Initialize CSV with required columns if not exists
 if not os.path.exists(csv_file):
     pd.DataFrame(columns=['hash_for_invoice', 'invoice_no']).to_csv(csv_file, index=False)
@@ -70,7 +74,6 @@ if not os.path.exists(csv_file):
 for pdf_file in os.listdir(input_dir):
     if not pdf_file.endswith('.pdf'): continue
     pdf_path = os.path.join(input_dir, pdf_file)
-    output_txt_path = os.path.join("processed", f"{os.path.splitext(pdf_file)[0]}.txt")
     
     try:
         # Generate unique hash
@@ -86,9 +89,57 @@ for pdf_file in os.listdir(input_dir):
         
         # Process PDF
         doc = DocumentConverter().convert(pdf_path)
+
+        # Initialize metadata
+        metadata = {}
+        
+        # Extract relational pairs from column headers
         doc_dict = doc.document.model_dump()
-        edit_column_headers(doc_dict)
+        count, column_metadata = edit_column_headers(doc_dict, metadata)
         doc.document = doc.document.__class__.model_validate(doc_dict)
+
+        # Extract relational pairs from export_to_text
+        text = doc.document.export_to_text()
+        lines = text.splitlines()
+        current_key = None
+        gap_count = 0
+        max_gap = 3  # Stop pair after 3 empty lines
+
+        for line in lines:
+            stripped = line.strip()
+            if not stripped:
+                gap_count += 1
+                if current_key and gap_count > max_gap:
+                    current_key = None
+                continue
+            # Reset gap count for non-empty lines
+            gap_count = 0
+            
+            # Skip table-related lines
+            if (stripped.startswith('|') or 
+                (len(stripped) > 5 and all(c in '-| ' for c in stripped)) or 
+                'tax summary' in stripped.lower() or 
+                'item details' in stripped.lower()):
+                current_key = None
+                continue
+            
+            if ':' in stripped:
+                parts = stripped.split(':', 1)
+                key = parts[0].strip().replace("#", "")  # Remove # from key
+                value = parts[1].strip() if len(parts) > 1 else ''
+                if key and key not in metadata:  # Avoid duplicates and empty keys
+                    metadata[key] = value
+                    current_key = key
+            elif current_key:
+                metadata[current_key] += ' ' + stripped
+        
+        # Merge metadata from column headers and text
+        metadata.update(column_metadata)
+
+        json_dir = "output/json"
+        json_file = os.path.join(json_dir, f"{hash_for_invoice}.json")
+        with open(json_file, 'w', encoding='utf-8') as f:
+            json.dump(metadata, f, indent=4)
 
         tables_dfs = []
         for t in doc.document.tables:
@@ -104,11 +155,6 @@ for pdf_file in os.listdir(input_dir):
         # Add hash and invoice number
         merged_df['hash_for_invoice'] = hash_for_invoice
         merged_df['invoice_no'] = invoice_no
-
-        # Save text output
-        text_content = dataframe_to_text(merged_df)
-        with open(output_txt_path, 'w', encoding='utf-8') as f:
-            f.write(text_content)
 
         # Append to CSV
         common_columns = merged_df.columns.intersection(existing_df.columns)
