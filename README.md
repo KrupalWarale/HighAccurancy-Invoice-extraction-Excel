@@ -7,17 +7,18 @@
 [![GitHub issues](https://img.shields.io/github/issues/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel/issues)
 [![GitHub language](https://img.shields.io/github/languages/top/KrupalWarale/HighAccurancy-Invoice-extraction-Excel?style=for-the-badge)](https://github.com/KrupalWarale/HighAccurancy-Invoice-extraction-Excel)
 
-<table align="center" width="100%">
+<table>
   <tr>
-    <td width="33%" style="text-align: center;">
-      <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="First" style="width: 100%; height: 500px; object-fit: contain;"/>
+    <td>
+      <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="First" width="300"/>
     </td>
-
-    <td width="32%" style="text-align: center;">
-      <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" alt="Third" style="width: 150%; height: 500px; object-fit: contain;"/>
+    <td>
+      <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" alt="Third" width="300"/>
     </td>
   </tr>
 </table>
+
+
 
 **A Python script for extracting data from invoices and outputting it to an Excel file.**
 
