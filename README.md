@@ -41,8 +41,8 @@ This Python script automates the extraction of key information from PDF invoices
 ## 🚀 Quick Start
 
 <div style="display: flex; justify-content: center; gap: 10px;">
-  <img src="https://github.com/user-attachments/assets/a54ed951-988b-4f4d-8bd3-4af0a309c5b8" alt="outputCsv" width="48%">
-  <img src="https://github.com/user-attachments/assets/e20527f7-f1b2-480b-8f71-3403118bbb8f" alt="jsonOutput" width="48%">
+  <img src="https://github.com/user-attachments/assets/a54ed951-988b-4f4d-8bd3-4af0a309c5b8" alt="outputCsv" height="400">
+  <img src="https://github.com/user-attachments/assets/e20527f7-f1b2-480b-8f71-3403118bbb8f" alt="jsonOutput" height="400">
 </div>
 
 
