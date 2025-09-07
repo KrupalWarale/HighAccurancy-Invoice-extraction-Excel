@@ -10,10 +10,10 @@
 <table>
   <tr>
     <td>
-      <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="First" width="500"/>
+      <img src="https://github.com/user-attachments/assets/1d6dc0a5-e3eb-4ab8-bae1-9f1006fdad94" alt="First" height="700" width="500"/>
     </td>
     <td>
-      <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" alt="Third" width="500"/>
+      <img src="https://github.com/user-attachments/assets/64bb712f-02ab-4f33-b916-1a7ac9243344" alt="Third" height="700" width="500"/>
     </td>
   </tr>
 </table>
