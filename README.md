@@ -43,7 +43,8 @@ This script extracts key invoice data and writes it into a structured CSV sheet.
   - Extract key-value pairs from raw text (`key: value`) including multi-line values.
   - Merge metadata from headers and text.
   - Save as JSON in `output/json` using a unique hash name.
-**- Table Processing:**
+    
+** Table Processing:**
    📂  JSON Format for Column Header Mapping
        
 ```
