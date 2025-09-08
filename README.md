@@ -43,17 +43,10 @@ This script extracts key invoice data and writes it into a structured CSV sheet.
   - Extract key-value pairs from raw text (`key: value`) including multi-line values.
   - Merge metadata from headers and text.
   - Save as JSON in `output/json` using a unique hash name.
-- Table Processing:
-  - Convert tables to Pandas DataFrames.
-  - Remove key-value pairs embedded in table cells.
-  - Normalize headers using `colomnHeader.json` mapping.
-  - Merge tables using unique identifiers: item_identifier, hsn_sac_identifier, tax_identifier, line_item_identifier.
-- Data Cleaning: Filter out irrelevant rows, totals, or duplicates; ensure consistent columns.
-- CSV Output: Append merged DataFrame to `output/output.csv` with `hash_for_invoice` and sequential `invoice_no`.
-- File Management: Move PDFs to `processed/success` if processed successfully, else `processed/failed`.
-- Logging: Print or log success/failure messages for monitoring.
-
-📂 # JSON Format for Column Header Mapping
+**- Table Processing:**
+   📂  JSON Format for Column Header Mapping
+       
+```
 
 {
   "table_unique_identifiers": { 
@@ -79,12 +72,18 @@ This script extracts key invoice data and writes it into a structured CSV sheet.
     "charge_percentage": [...] 
   }
 }
+```
+  - Convert tables to Pandas DataFrames.
+  - Remove key-value pairs embedded in table colomn cells by editing object data return by docling itself.
+  - Normalize headers using `colomnHeader.json` mapping(assigning headers name from colomnHeader.json with closest match using difflib library).
+  - Merge tables using unique identifiers: item_identifier, hsn_sac_identifier, tax_identifier, line_item_identifier.
+- Data Cleaning: Filter out irrelevant rows, totals, or duplicates; ensure consistent columns.
+- CSV Output: Append merged DataFrame to `output/output.csv` with `hash_for_invoice` and sequential `invoice_no`.
+- File Management: Move PDFs to `processed/success` if processed successfully, else `processed/failed`.
+- Logging: Print or log success/failure messages for monitoring.
 
-# Notes:
-- table_unique_identifiers: Columns used to uniquely identify table rows.
-- line_item_table_headers: Maps synonyms of line item table columns to normalized names.
-- charges_fees_table_headers: Maps synonyms of charges/fees table columns.
-- [...] denotes arrays of synonyms as per your original JSON.
+
+
 
 
 
