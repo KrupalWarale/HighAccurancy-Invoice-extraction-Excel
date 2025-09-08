@@ -2,7 +2,8 @@
 <img width="1919" height="1000" alt="doc" src="https://github.com/user-attachments/assets/22ea60f3-3c74-44ea-8b89-75f19d34e588" />
 
 
-# ⚡ High Accuracy Invoice Extraction to Excel
+# ⚡ High Accuracy Invoice Extraction to Excel 
+***🧠 Open-source PDF-to-CSV invoice extractor with smart metadata and table processing.***
 
 <div align="center">
 
@@ -44,8 +45,9 @@ This script extracts key invoice data and writes it into a structured CSV sheet.
   - Merge metadata from headers and text.
   - Save as JSON in `output/json` using a unique hash name.
     
-** Table Processing:**
-   📂  JSON Format for Column Header Mapping
+**Table Processing:**
+
+   📂  JSON Format for Column Header Mapping (better the json greater the accurancy)
        
 ```
 
@@ -73,6 +75,8 @@ This script extracts key invoice data and writes it into a structured CSV sheet.
     "charge_percentage": [...] 
   }
 }
+
+// [...] represents list of common/similar names for corresponding header
 ```
   - Convert tables to Pandas DataFrames.
   - Remove key-value pairs embedded in table colomn cells by editing object data return by docling itself.
