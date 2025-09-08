@@ -13,20 +13,20 @@
 
 
 
-**A Python script for extracting data from invoices and outputting it to an Excel file.**
+**A Python script for extracting data from invoices and outputting it to an CSV file.**
 
 </div>
 
 ## 📖 Overview
 
-This script extracts key invoice data and writes it into a structured Excel sheet. It targets high accuracy, possibly using docling library, with a custom json `colomnHeader.json` defining the output schema and headers.
+This script extracts key invoice data and writes it into a structured CSV sheet. It targets high accuracy, possibly using docling library, with a custom json `colomnHeader.json` defining the output schema and headers.
 
 
 ## ✨ Features
 
 - **Invoice Data Extraction:** Processes invoice images or other data formats to extract relevant information.
 - **Data Cleaning and Transformation:** Cleans and transforms extracted data to ensure accuracy and consistency.
-- **Excel Output:** Generates a well-formatted CSV file (.csv) containing the extracted data.
+- **CSV Output:** Generates a well-formatted CSV file (.csv) containing the extracted data.
 - **Customizable Output:** (Likely) allows customization of output fields through configuration (needs confirmation via code review).
 - **High Accuracy:** Aims for a high degree of accuracy in data extraction.
 
@@ -61,7 +61,7 @@ This script extracts key invoice data and writes it into a structured Excel shee
 
 ## ⚙️ Configuration
 
-The `colomnHeader.json` file defines the structure of the output Excel file.  Its contents and format should be documented.  (Analyze `colomnHeader.json` and describe its structure and the role of each key.)
+The `colomnHeader.json` file defines the structure of the output CSV file.  Its contents and format should be documented.  (Analyze `colomnHeader.json` and describe its structure and the role of each key.)
 
 
 
